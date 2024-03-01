@@ -47,6 +47,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       decoration: const BoxDecoration(
@@ -61,7 +62,9 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                           vertical: 12, horizontal: 20),
                       child: const SansBold('Hello I\'m', 16),
                     ),
+                    const SizedBox(height: 15),
                     const SansBold('Veng-Eang', 55.0),
+                    const Sans('Flutter developer', 30.0),
                   ],
                 ),
                 const CircleAvatar(
