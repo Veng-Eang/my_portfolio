@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/components.dart';
 
 class LandingPageWeb extends StatefulWidget {
@@ -62,6 +61,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                           vertical: 12, horizontal: 20),
                       child: const SansBold('Hello I\'m', 16),
                     ),
+                    const SansBold('Veng-Eang', 55.0),
                   ],
                 ),
                 const CircleAvatar(
