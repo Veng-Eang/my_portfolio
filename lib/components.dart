@@ -62,3 +62,16 @@ class SansBold extends StatelessWidget {
     );
   }
 }
+
+class Sans extends StatelessWidget {
+  const Sans(this.text, this.size, {super.key});
+  final String text;
+  final double size;
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.openSans(fontSize: size),
+    );
+  }
+}
