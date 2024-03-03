@@ -40,7 +40,8 @@ class _LandingPageWebState extends State<LandingPageWeb> {
       ),
       body: ListView(
         children: [
-          Container(
+          //First page
+          SizedBox(
             height: heightDevic - 56,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -65,6 +66,30 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                     const SizedBox(height: 15),
                     const SansBold('Veng-Eang', 55.0),
                     const Sans('Flutter developer', 30.0),
+                    const SizedBox(height: 15),
+                    const Row(
+                      children: [
+                        Icon(Icons.email),
+                        SizedBox(width: 20),
+                        Sans('oengvengeang@gmail.com', 15.0),
+                      ],
+                    ),
+                    const SizedBox(height: 15),
+                    const Row(
+                      children: [
+                        Icon(Icons.call),
+                        SizedBox(width: 20),
+                        Sans('+855 11 701 520', 15.0),
+                      ],
+                    ),
+                    const SizedBox(height: 15),
+                    const Row(
+                      children: [
+                        Icon(Icons.location_pin),
+                        SizedBox(width: 20),
+                        Sans('13/3, Phnom Penh, Cambodia', 15.0),
+                      ],
+                    ),
                   ],
                 ),
                 const CircleAvatar(
@@ -79,6 +104,115 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                       backgroundImage: AssetImage('assets/image-2.png'),
                     ),
                   ),
+                ),
+              ],
+            ),
+          ),
+          //Second Page
+          SizedBox(
+            height: heightDevic / 1.5,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Image.asset("assets/web.jpg", height: heightDevic / 1.7),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SansBold("About me", 40.0),
+                    const SizedBox(height: 15),
+                    const Sans(
+                        'Hello! I\'m Veng Eang I specialize in flutter development.',
+                        15),
+                    const Sans(
+                        'I strive to ensure astounding performance with stae of ',
+                        15),
+                    const Sans(
+                        'the art security for Android, Ios, Web, Mac, Linux and Windows',
+                        15),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(7.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.tealAccent,
+                              style: BorderStyle.solid,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: const Sans('Flutter', 15.0),
+                        ),
+                        const SizedBox(width: 7),
+                        Container(
+                          padding: const EdgeInsets.all(7.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.tealAccent,
+                              style: BorderStyle.solid,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: const Sans('Firebase', 15.0),
+                        ),
+                        const SizedBox(width: 7),
+                        Container(
+                          padding: const EdgeInsets.all(7.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.tealAccent,
+                              style: BorderStyle.solid,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: const Sans('Android', 15.0),
+                        ),
+                        const SizedBox(width: 7),
+                        Container(
+                          padding: const EdgeInsets.all(7.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.tealAccent,
+                              style: BorderStyle.solid,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: const Sans('Ios', 15.0),
+                        ),
+                        const SizedBox(width: 7),
+                        Container(
+                          padding: const EdgeInsets.all(7.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.tealAccent,
+                              style: BorderStyle.solid,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: const Sans('Windows', 15.0),
+                        ),
+                        const SizedBox(width: 7),
+                        Container(
+                          padding: const EdgeInsets.all(7.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.tealAccent,
+                              style: BorderStyle.solid,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: const Sans('Web', 15.0),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ],
             ),
