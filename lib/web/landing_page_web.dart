@@ -110,7 +110,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
           ),
           //Second Page
           SizedBox(
-            height: heightDevic / 1.5,
+            height: heightDevic / 1.3,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -217,6 +217,82 @@ class _LandingPageWebState extends State<LandingPageWeb> {
               ],
             ),
           ),
+          //Third section
+          SizedBox(
+            height: heightDevic / 1.3,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const SansBold("What I do?", 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Card(
+                      elevation: 30,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      shadowColor: Colors.tealAccent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              'assets/webL.png',
+                              height: 200,
+                              width: 200,
+                            ),
+                            const SizedBox(height: 10),
+                            const SansBold("Web development", 15.0),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Card(
+                      elevation: 30,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      shadowColor: Colors.tealAccent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              "app.png",
+                              width: 200,
+                              height: 200,
+                              fit: BoxFit.contain,
+                            ),
+                            const SizedBox(height: 10),
+                            const SansBold("App development", 15.0),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Card(
+                      elevation: 30,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      shadowColor: Colors.tealAccent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset("assets/firebase.png",
+                                height: 200, width: 200),
+                            const SizedBox(height: 10),
+                            const SansBold("Back-end development", 15.0),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
