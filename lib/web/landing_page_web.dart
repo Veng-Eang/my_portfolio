@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/components.dart';
 
 class LandingPageWeb extends StatefulWidget {
@@ -287,6 +288,51 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                           ],
                         ),
                       ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          //Fourth section
+          SizedBox(
+            height: heightDevic,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const SansBold("Contect me", 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children: [
+                        Column(
+                          children: [
+                            const Sans("First name", 16.0),
+                            SizedBox(
+                              width: 350,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  enabledBorder: const OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Colors.tealAccent),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10.0)),
+                                  ),
+                                  focusedBorder: const OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: Colors.tealAccent, width: 2),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(15.0)),
+                                  ),
+                                  hintText: "Please enter your first name",
+                                  hintStyle: GoogleFonts.poppins(fontSize: 14),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
                     )
                   ],
                 )
