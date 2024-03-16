@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TabWeb extends StatefulWidget {
@@ -97,6 +98,10 @@ class TextForm extends StatelessWidget {
         SizedBox(
           width: width,
           child: TextFormField(
+            // inputFormatters: [
+            //   LengthLimitingTextInputFormatter(10),
+            //   FilteringTextInputFormatter.allow(RegExp('[a-zA-Z]')),
+            // ],
             maxLines: maxLine,
             decoration: InputDecoration(
               enabledBorder: const OutlineInputBorder(
@@ -107,12 +112,94 @@ class TextForm extends StatelessWidget {
                 borderSide: BorderSide(color: Colors.tealAccent, width: 2),
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
               ),
+              errorBorder: const OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.red),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              ),
+              focusedErrorBorder: const OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.red, width: 2),
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+              ),
               hintText: hintText,
               hintStyle: GoogleFonts.poppins(fontSize: 14),
             ),
+            validator: (text) {
+              if (RegExp("\\bvengeang\\b", caseSensitive: false)
+                  .hasMatch(text.toString())) {
+                return "Match Found";
+              }
+            },
+            autovalidateMode: AutovalidateMode.onUserInteraction,
           ),
         )
       ],
+    );
+  }
+}
+
+class AnimatedCardWeb extends StatefulWidget {
+  AnimatedCardWeb({
+    super.key,
+    required this.imagePath,
+    required this.text,
+    this.fit,
+    this.reverse,
+  });
+  final String imagePath;
+  final String text;
+  final BoxFit? fit;
+  final bool? reverse;
+  @override
+  State<AnimatedCardWeb> createState() => _AnimatedCardWebState();
+}
+
+class _AnimatedCardWebState extends State<AnimatedCardWeb>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(seconds: 2),
+  );
+
+  late final Animation<Offset> _animation = Tween(
+    begin: widget.reverse == true ? Offset(0, 0.08) : Offset.zero,
+    end: widget.reverse == true ? Offset.zero : Offset(0, 0.08),
+  ).animate(_controller);
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _controller.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(
+      position: _animation,
+      child: Card(
+        elevation: 30,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+          side: const BorderSide(color: Colors.tealAccent),
+        ),
+        shadowColor: Colors.tealAccent,
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                widget.imagePath,
+                width: 200,
+                height: 200,
+                fit: widget.fit,
+              ),
+              const SizedBox(height: 10),
+              SansBold(widget.text, 15.0),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

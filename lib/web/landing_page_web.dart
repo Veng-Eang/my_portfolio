@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/components.dart';
 
 class LandingPageWeb extends StatefulWidget {
@@ -229,67 +228,19 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Card(
-                      elevation: 30,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0)),
-                      shadowColor: Colors.tealAccent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              'assets/webL.png',
-                              height: 200,
-                              width: 200,
-                            ),
-                            const SizedBox(height: 10),
-                            const SansBold("Web development", 15.0),
-                          ],
-                        ),
-                      ),
+                    AnimatedCardWeb(
+                      imagePath: 'assets/webL.png',
+                      text: 'Web development',
                     ),
-                    Card(
-                      elevation: 30,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0)),
-                      shadowColor: Colors.tealAccent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "app.png",
-                              width: 200,
-                              height: 200,
-                              fit: BoxFit.contain,
-                            ),
-                            const SizedBox(height: 10),
-                            const SansBold("App development", 15.0),
-                          ],
-                        ),
-                      ),
+                    AnimatedCardWeb(
+                      imagePath: 'assets/app.png',
+                      text: 'Application development',
+                      fit: BoxFit.contain,
                     ),
-                    Card(
-                      elevation: 30,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0)),
-                      shadowColor: Colors.tealAccent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset("assets/firebase.png",
-                                height: 200, width: 200),
-                            const SizedBox(height: 10),
-                            const SansBold("Back-end development", 15.0),
-                          ],
-                        ),
-                      ),
-                    )
+                    AnimatedCardWeb(
+                      imagePath: 'assets/firebase.png',
+                      text: 'Backend development',
+                    ),
                   ],
                 )
               ],
@@ -339,9 +290,20 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   width: widthDevice / 1.5,
                   maxLine: 10,
                 ),
+                MaterialButton(
+                  onPressed: () {},
+                  elevation: 20.0,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  height: 60.0,
+                  minWidth: 200.0,
+                  color: Colors.tealAccent,
+                  child: const SansBold('Submit', 20),
+                )
               ],
             ),
           ),
+          const SizedBox(height: 20.0),
         ],
       ),
     );
