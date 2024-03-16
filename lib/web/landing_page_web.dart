@@ -12,7 +12,8 @@ class LandingPageWeb extends StatefulWidget {
 class _LandingPageWebState extends State<LandingPageWeb> {
   @override
   Widget build(BuildContext context) {
-    var heightDevic = MediaQuery.of(context).size.height;
+    var heightDevice = MediaQuery.of(context).size.height;
+    var widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       drawer: Drawer(),
@@ -43,7 +44,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
         children: [
           //First page
           SizedBox(
-            height: heightDevic - 56,
+            height: heightDevice - 56,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -111,11 +112,11 @@ class _LandingPageWebState extends State<LandingPageWeb> {
           ),
           //Second Page
           SizedBox(
-            height: heightDevic / 1.3,
+            height: heightDevice / 1.3,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Image.asset("assets/web.jpg", height: heightDevic / 1.7),
+                Image.asset("assets/web.jpg", height: heightDevice / 1.7),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -220,7 +221,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
           ),
           //Third section
           SizedBox(
-            height: heightDevic / 1.3,
+            height: heightDevice / 1.3,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -296,49 +297,51 @@ class _LandingPageWebState extends State<LandingPageWeb> {
           ),
           //Fourth section
           SizedBox(
-            height: heightDevic,
+            height: heightDevice,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const SansBold("Contect me", 40),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
                       children: [
-                        Column(
-                          children: [
-                            const Sans("First name", 16.0),
-                            SizedBox(
-                              width: 350,
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                  enabledBorder: const OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Colors.tealAccent),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10.0)),
-                                  ),
-                                  focusedBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.tealAccent, width: 2),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15.0)),
-                                  ),
-                                  hintText: "Please enter your first name",
-                                  hintStyle: GoogleFonts.poppins(fontSize: 14),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
+                        TextForm(
+                            heading: 'First Name',
+                            hintText: 'Please enter your first name',
+                            width: 350),
+                        SizedBox(height: 15),
+                        TextForm(
+                            heading: "Email",
+                            hintText: 'Please enter your email',
+                            width: 350),
                       ],
-                    )
+                    ),
+                    Column(
+                      children: [
+                        TextForm(
+                            heading: 'Last Name',
+                            hintText: 'Please enter your last name',
+                            width: 350),
+                        SizedBox(height: 15),
+                        TextForm(
+                            heading: 'Phone number',
+                            hintText: 'Please enter phone number',
+                            width: 350),
+                      ],
+                    ),
                   ],
-                )
+                ),
+                TextForm(
+                  heading: 'Message',
+                  hintText: 'Please enter your message',
+                  width: widthDevice / 1.5,
+                  maxLine: 10,
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

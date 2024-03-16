@@ -75,3 +75,44 @@ class Sans extends StatelessWidget {
     );
   }
 }
+
+class TextForm extends StatelessWidget {
+  const TextForm({
+    super.key,
+    required this.heading,
+    required this.hintText,
+    required this.width,
+    this.maxLine,
+  });
+  final String heading;
+  final String hintText;
+  final double width;
+  final int? maxLine;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Sans(heading, 16.0),
+        SizedBox(
+          width: width,
+          child: TextFormField(
+            maxLines: maxLine,
+            decoration: InputDecoration(
+              enabledBorder: const OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.tealAccent),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              ),
+              focusedBorder: const OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.tealAccent, width: 2),
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+              ),
+              hintText: hintText,
+              hintStyle: GoogleFonts.poppins(fontSize: 14),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}
