@@ -138,7 +138,7 @@ class TextForm extends StatelessWidget {
 }
 
 class AnimatedCardWeb extends StatefulWidget {
-  AnimatedCardWeb({
+  const AnimatedCardWeb({
     super.key,
     required this.imagePath,
     required this.text,
@@ -157,8 +157,8 @@ class _AnimatedCardWebState extends State<AnimatedCardWeb>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     vsync: this,
-    duration: const Duration(seconds: 2),
-  );
+    duration: const Duration(seconds: 4),
+  )..repeat(reverse: true);
 
   late final Animation<Offset> _animation = Tween(
     begin: widget.reverse == true ? Offset(0, 0.08) : Offset.zero,
@@ -167,9 +167,8 @@ class _AnimatedCardWebState extends State<AnimatedCardWeb>
 
   @override
   void dispose() {
-    // TODO: implement dispose
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 
   @override

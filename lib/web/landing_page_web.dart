@@ -236,6 +236,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                       imagePath: 'assets/app.png',
                       text: 'Application development',
                       fit: BoxFit.contain,
+                      reverse: true,
                     ),
                     AnimatedCardWeb(
                       imagePath: 'assets/firebase.png',
