@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/components.dart';
 
 class LandingPageWeb extends StatefulWidget {
@@ -9,13 +10,45 @@ class LandingPageWeb extends StatefulWidget {
 }
 
 class _LandingPageWebState extends State<LandingPageWeb> {
+  final Uri _url = Uri.parse('');
   @override
   Widget build(BuildContext context) {
     var heightDevice = MediaQuery.of(context).size.height;
     var widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const CircleAvatar(
+              radius: 72,
+              backgroundColor: Colors.tealAccent,
+              child: CircleAvatar(
+                radius: 72,
+                backgroundColor: Colors.white,
+                backgroundImage: AssetImage('assets/image-2.png'),
+              ),
+            ),
+            const SizedBox(height: 15),
+            const SansBold('vengeang', 30.0),
+            const SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  icon: SvgPicture.asset(
+                    'assets/instagram.svg',
+                    width: 35,
+                  ),
+                  onPressed: () {},
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
@@ -221,10 +254,10 @@ class _LandingPageWebState extends State<LandingPageWeb> {
           //Third section
           SizedBox(
             height: heightDevice / 1.3,
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const SansBold("What I do?", 40),
+                SansBold("What I do?", 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
