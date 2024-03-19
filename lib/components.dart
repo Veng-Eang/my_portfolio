@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TabWeb extends StatefulWidget {
   const TabWeb(this.title, {super.key});
 
-  final title;
+  final String title;
   @override
   State<TabWeb> createState() => _TabWebState();
 }
@@ -161,7 +160,7 @@ class _AnimatedCardWebState extends State<AnimatedCardWeb>
   )..repeat(reverse: true);
 
   late final Animation<Offset> _animation = Tween(
-    begin: widget.reverse == true ? Offset(0, 0.08) : Offset.zero,
+    begin: widget.reverse == true ? const Offset(0, 0.08) : Offset.zero,
     end: widget.reverse == true ? Offset.zero : Offset(0, 0.08),
   ).animate(_controller);
 

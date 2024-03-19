@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/components.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LandingPageWeb extends StatefulWidget {
   const LandingPageWeb({super.key});
 
   @override
-  _LandingPageWebState createState() => _LandingPageWebState();
+  State<LandingPageWeb> createState() => _LandingPageWebState();
 }
 
 class _LandingPageWebState extends State<LandingPageWeb> {
-  final Uri _url = Uri.parse('');
+  Widget urlLauncher(String imagePath, String url) {
+    return IconButton(
+      icon: SvgPicture.asset(
+        imagePath,
+        width: 35,
+        color: Colors.black,
+      ),
+      onPressed: () async {
+        await launchUrl(Uri.parse(url));
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var heightDevice = MediaQuery.of(context).size.height;
@@ -37,12 +50,17 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                IconButton(
-                  icon: SvgPicture.asset(
-                    'assets/instagram.svg',
-                    width: 35,
-                  ),
-                  onPressed: () {},
+                urlLauncher(
+                  'assets/instagram.svg',
+                  'https://www.instagram.com/veng_eang',
+                ),
+                urlLauncher(
+                  'assets/github.svg',
+                  'https://github.com/Veng-Eang',
+                ),
+                urlLauncher(
+                  'assets/twitter.svg',
+                  'https://twitter.com/o_vengeang',
                 ),
               ],
             )
