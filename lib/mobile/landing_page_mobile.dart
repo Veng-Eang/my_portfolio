@@ -36,14 +36,16 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               padding: const EdgeInsets.only(bottom: 20.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(width: 2.0, color: Colors.black),
+              child: CircleAvatar(
+                radius: 117.0,
+                backgroundColor: Colors.tealAccent,
+                child: CircleAvatar(
+                  radius: 110.0,
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage('assets/image-2.png'),
                 ),
-                child: Image.asset('assets/profile2-circle.png'),
               ),
             ),
             TabsMobile(text: 'Home', route: '/'),
@@ -75,6 +77,89 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             )
           ],
         ),
+      ),
+      body: ListView(
+        children: [
+          // Intro , First section
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const CircleAvatar(
+                  radius: 117.0,
+                  backgroundColor: Colors.tealAccent,
+                  child: CircleAvatar(
+                    radius: 113.0,
+                    backgroundColor: Colors.black,
+                    child: CircleAvatar(
+                      radius: 110.0,
+                      backgroundColor: Colors.white,
+                      backgroundImage: AssetImage('assets/image-2.png'),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 25),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      decoration: const BoxDecoration(
+                          color: Colors.tealAccent,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20.0),
+                            topRight: Radius.circular(20.0),
+                            bottomRight: Radius.circular(20.0),
+                          )),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 20.0),
+                      child: const SansBold('Hello I\'m', 15.0),
+                    ),
+                    SansBold('Vengeang', 40),
+                    SansBold('Flutter Developer', 20.0),
+                  ],
+                ),
+                const SizedBox(height: 15.0),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Wrap(
+                      direction: Axis.vertical,
+                      spacing: 3.0,
+                      children: [
+                        Icon(Icons.email),
+                        Icon(Icons.call),
+                        Icon(Icons.location_pin),
+                      ],
+                    ),
+                    SizedBox(width: 20),
+                    Wrap(
+                      direction: Axis.vertical,
+                      spacing: 8.0,
+                      children: [
+                        Sans('oengvengeang@gmail.com', 15.0),
+                        Sans('+855 11 701 520', 15.0),
+                        Sans('13/3, Phnom Penh, Cambodia', 15.0),
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 90.0),
+          // About me, Second section
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SansBold('About me', 35.0),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
