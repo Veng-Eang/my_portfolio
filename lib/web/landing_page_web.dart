@@ -11,7 +11,7 @@ class LandingPageWeb extends StatefulWidget {
 }
 
 class _LandingPageWebState extends State<LandingPageWeb> {
-  Widget urlLauncher(String imagePath, String url) {
+  Widget _urlLauncher(String imagePath, String url) {
     return IconButton(
       icon: SvgPicture.asset(
         imagePath,
@@ -50,15 +50,15 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                urlLauncher(
+                _urlLauncher(
                   'assets/instagram.svg',
                   'https://www.instagram.com/veng_eang',
                 ),
-                urlLauncher(
+                _urlLauncher(
                   'assets/github.svg',
                   'https://github.com/Veng-Eang',
                 ),
-                urlLauncher(
+                _urlLauncher(
                   'assets/twitter.svg',
                   'https://twitter.com/o_vengeang',
                 ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/components.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LandingPageMobile extends StatefulWidget {
   @override
@@ -9,6 +11,19 @@ class LandingPageMobile extends StatefulWidget {
 }
 
 class _LandingPageMobileState extends State<LandingPageMobile> {
+  Widget _urlLauncher(String imagePath, String url) {
+    return IconButton(
+      icon: SvgPicture.asset(
+        imagePath,
+        width: 35,
+        color: Colors.black,
+      ),
+      onPressed: () async {
+        await launchUrl(Uri.parse(url));
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +55,24 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             TabsMobile(text: 'About', route: '/about'),
             SizedBox(height: 20),
             TabsMobile(text: 'Contact', route: '/contact'),
+            SizedBox(height: 40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _urlLauncher(
+                  'assets/instagram.svg',
+                  'https://www.instagram.com/veng_eang',
+                ),
+                _urlLauncher(
+                  'assets/github.svg',
+                  'https://github.com/Veng-Eang',
+                ),
+                _urlLauncher(
+                  'assets/twitter.svg',
+                  'https://twitter.com/o_vengeang',
+                ),
+              ],
+            )
           ],
         ),
       ),
