@@ -161,7 +161,7 @@ class _AnimatedCardWebState extends State<AnimatedCardWeb>
 
   late final Animation<Offset> _animation = Tween(
     begin: widget.reverse == true ? const Offset(0, 0.08) : Offset.zero,
-    end: widget.reverse == true ? Offset.zero : Offset(0, 0.08),
+    end: widget.reverse == true ? Offset.zero : const Offset(0, 0.08),
   ).animate(_controller);
 
   @override
