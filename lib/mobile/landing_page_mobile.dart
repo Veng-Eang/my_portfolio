@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/components.dart';
 
 class LandingPageMobile extends StatefulWidget {
   @override
@@ -29,7 +30,16 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                 ),
                 child: Image.asset('assets/profile2-circle.png'),
               ),
-            )
+            ),
+            TabsMobile(text: 'Home', route: '/'),
+            SizedBox(height: 20),
+            TabsMobile(text: 'Works', route: '/works'),
+            SizedBox(height: 20),
+            TabsMobile(text: 'Blog', route: '/blog'),
+            SizedBox(height: 20),
+            TabsMobile(text: 'About', route: '/about'),
+            SizedBox(height: 20),
+            TabsMobile(text: 'Contact', route: '/contact'),
           ],
         ),
       ),
