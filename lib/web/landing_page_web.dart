@@ -311,35 +311,35 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                     Column(
                       children: [
                         TextForm(
-                            heading: 'First Name',
+                            text: 'First Name',
                             hintText: 'Please enter your first name',
-                            width: 350),
+                            containerWidth: 350),
                         SizedBox(height: 15),
                         TextForm(
-                            heading: "Email",
+                            text: "Email",
                             hintText: 'Please enter your email',
-                            width: 350),
+                            containerWidth: 350),
                       ],
                     ),
                     Column(
                       children: [
                         TextForm(
-                            heading: 'Last Name',
+                            text: 'Last Name',
                             hintText: 'Please enter your last name',
-                            width: 350),
+                            containerWidth: 350),
                         SizedBox(height: 15),
                         TextForm(
-                            heading: 'Phone number',
+                            text: 'Phone number',
                             hintText: 'Please enter phone number',
-                            width: 350),
+                            containerWidth: 350),
                       ],
                     ),
                   ],
                 ),
                 TextForm(
-                  heading: 'Message',
+                  text: 'Message',
                   hintText: 'Please enter your message',
-                  width: widthDevice / 1.5,
+                  containerWidth: widthDevice / 1.5,
                   maxLine: 10,
                 ),
                 MaterialButton(

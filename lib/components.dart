@@ -114,23 +114,23 @@ class Sans extends StatelessWidget {
 class TextForm extends StatelessWidget {
   const TextForm({
     super.key,
-    required this.heading,
+    required this.text,
     required this.hintText,
-    required this.width,
+    required this.containerWidth,
     this.maxLine,
   });
-  final String heading;
+  final String text;
   final String hintText;
-  final double width;
+  final double containerWidth;
   final int? maxLine;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Sans(heading, 16.0),
+        Sans(text, 16.0),
         SizedBox(
-          width: width,
+          width: containerWidth,
           child: TextFormField(
             // inputFormatters: [
             //   LengthLimitingTextInputFormatter(10),
@@ -178,11 +178,16 @@ class AnimatedCardWeb extends StatefulWidget {
     required this.text,
     this.fit,
     this.reverse,
+    this.height,
+    this.width,
   });
   final String imagePath;
   final String text;
   final BoxFit? fit;
   final bool? reverse;
+  final double? height;
+  final double? width;
+
   @override
   State<AnimatedCardWeb> createState() => _AnimatedCardWebState();
 }
@@ -223,8 +228,8 @@ class _AnimatedCardWebState extends State<AnimatedCardWeb>
             children: [
               Image.asset(
                 widget.imagePath,
-                width: 200,
-                height: 200,
+                width: widget.width ?? 200.0,
+                height: widget.height ?? 200.0,
                 fit: widget.fit,
               ),
               const SizedBox(height: 10),

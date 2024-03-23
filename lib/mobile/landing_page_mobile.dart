@@ -45,6 +45,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
 
   @override
   Widget build(BuildContext context) {
+    var deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -199,7 +200,78 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
               ],
             ),
           ),
-          const SizedBox(height: 60),
+          const SizedBox(height: 60.0),
+          Column(
+            children: [
+              const SansBold("What I do?", 35.0),
+              const AnimatedCardWeb(
+                imagePath: "assets/webL.png",
+                text: "Web development",
+                width: 300,
+              ),
+              const SizedBox(height: 35.0),
+              const AnimatedCardWeb(
+                imagePath: "assets/app.png",
+                text: "App development",
+                width: 300,
+                reverse: true,
+                fit: BoxFit.contain,
+              ),
+              const SizedBox(height: 35.0),
+              const AnimatedCardWeb(
+                imagePath: "assets/firebase.png",
+                text: "Back-end development",
+                width: 300,
+              ),
+              const SizedBox(height: 60.0),
+              // Contact Forth section
+              Wrap(
+                spacing: 20.0,
+                runSpacing: 20,
+                alignment: WrapAlignment.center,
+                children: [
+                  const SansBold("Contact me", 35.0),
+                  TextForm(
+                    text: "First Name",
+                    hintText: "Please type first name",
+                    containerWidth: deviceWidth / 1.4,
+                  ),
+                  TextForm(
+                    text: "Last Name",
+                    hintText: "Please type last name",
+                    containerWidth: deviceWidth / 1.4,
+                  ),
+                  TextForm(
+                    text: "Email",
+                    hintText: "Please type email",
+                    containerWidth: deviceWidth / 1.4,
+                  ),
+                  TextForm(
+                    text: "Phone number",
+                    hintText: "Please type phone number",
+                    containerWidth: deviceWidth / 1.4,
+                  ),
+                  TextForm(
+                    text: "Message",
+                    hintText: "Please type message",
+                    containerWidth: deviceWidth / 1.4,
+                    maxLine: 10,
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    elevation: 20,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    height: 60.0,
+                    color: Colors.tealAccent,
+                    minWidth: deviceWidth / 2.2,
+                    child: const SansBold("Submit", 20.0),
+                  ),
+                ],
+              )
+            ],
+          )
         ],
       ),
     );
