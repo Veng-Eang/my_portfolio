@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TabWeb extends StatefulWidget {
-  const TabWeb(this.title, {super.key});
+  const TabWeb({
+    super.key,
+    required this.title,
+    required this.route,
+  });
 
   final String title;
+  final String route;
   @override
   State<TabWeb> createState() => _TabWebState();
 }
@@ -13,37 +18,42 @@ class _TabWebState extends State<TabWeb> {
   bool _isSelected = false;
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) {
-        setState(() {
-          _isSelected = true;
-        });
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed(widget.route);
       },
-      onExit: (_) {
-        setState(() {
-          _isSelected = false;
-        });
-      },
-      child: AnimatedDefaultTextStyle(
-        duration: const Duration(milliseconds: 150),
-        curve: Curves.elasticIn,
-        style: _isSelected
-            ? GoogleFonts.oswald(
-                shadows: [
-                  const Shadow(
-                    color: Colors.black,
-                    offset: Offset(0, -6),
-                  )
-                ],
-                fontSize: 25.0,
-                color: Colors.transparent,
-                decoration: TextDecoration.underline,
-                decorationThickness: 2,
-                decorationColor: Colors.tealAccent,
-              )
-            : GoogleFonts.oswald(fontSize: 23.0, color: Colors.black),
-        child: Text(
-          widget.title,
+      child: MouseRegion(
+        onEnter: (_) {
+          setState(() {
+            _isSelected = true;
+          });
+        },
+        onExit: (_) {
+          setState(() {
+            _isSelected = false;
+          });
+        },
+        child: AnimatedDefaultTextStyle(
+          duration: const Duration(milliseconds: 150),
+          curve: Curves.elasticIn,
+          style: _isSelected
+              ? GoogleFonts.oswald(
+                  shadows: [
+                    const Shadow(
+                      color: Colors.black,
+                      offset: Offset(0, -6),
+                    )
+                  ],
+                  fontSize: 25.0,
+                  color: Colors.transparent,
+                  decoration: TextDecoration.underline,
+                  decorationThickness: 2,
+                  decorationColor: Colors.tealAccent,
+                )
+              : GoogleFonts.oswald(fontSize: 23.0, color: Colors.black),
+          child: Text(
+            widget.title,
+          ),
         ),
       ),
     );
@@ -80,7 +90,9 @@ class _TabsMobileState extends State<TabsMobile> {
           color: Colors.white,
         ),
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).pushNamed(widget.route);
+      },
     );
   }
 }

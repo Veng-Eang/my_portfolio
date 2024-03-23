@@ -269,7 +269,8 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                     child: const SansBold("Submit", 20.0),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(height: 20.0),
             ],
           )
         ],
