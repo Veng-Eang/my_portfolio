@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/components.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -11,6 +12,24 @@ class LandingPageMobile extends StatefulWidget {
 }
 
 class _LandingPageMobileState extends State<LandingPageMobile> {
+  Widget tealContainer(String text) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.tealAccent,
+          style: BorderStyle.solid,
+          width: 2.0,
+        ),
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      padding: EdgeInsets.all(7.0),
+      child: Text(
+        text,
+        style: GoogleFonts.openSans(fontSize: 15.0),
+      ),
+    );
+  }
+
   Widget _urlLauncher(String imagePath, String url) {
     return IconButton(
       icon: SvgPicture.asset(
@@ -27,6 +46,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
@@ -150,15 +170,36 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
           const SizedBox(height: 90.0),
           // About me, Second section
           Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SansBold('About me', 35.0),
+                const SansBold('About me', 35.0),
+                const Sans(
+                    'Hello! I\'m Vengeang Oeng I specialize in flutter development',
+                    15.0),
+                const Sans(
+                    "I strive to ensure astounding performance with state of",
+                    15.0),
+                const Sans(
+                    "the art security for Android, Ios, Web, Mac, Linux", 15.0),
+                const SizedBox(height: 10),
+                Wrap(
+                  spacing: 7.0,
+                  runSpacing: 7.0,
+                  children: [
+                    tealContainer('Flutter'),
+                    tealContainer('Firebase'),
+                    tealContainer('Abdroid'),
+                    tealContainer('Windows'),
+                    tealContainer('Web'),
+                  ],
+                )
               ],
             ),
           ),
+          const SizedBox(height: 60),
         ],
       ),
     );
