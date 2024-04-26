@@ -46,6 +46,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
   @override
   Widget build(BuildContext context) {
     var deviceWidth = MediaQuery.of(context).size.width;
+    var deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -173,30 +174,39 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
           Padding(
             padding: EdgeInsets.only(left: 20),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SansBold('About me', 35.0),
-                const Sans(
-                    'Hello! I\'m Vengeang Oeng I specialize in flutter development',
-                    15.0),
-                const Sans(
-                    "I strive to ensure astounding performance with state of",
-                    15.0),
-                const Sans(
-                    "the art security for Android, Ios, Web, Mac, Linux", 15.0),
-                const SizedBox(height: 10),
-                Wrap(
-                  spacing: 7.0,
-                  runSpacing: 7.0,
+                Image.asset(
+                  "assets/web.jpg",
+                  width: 300,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    tealContainer('Flutter'),
-                    tealContainer('Firebase'),
-                    tealContainer('Abdroid'),
-                    tealContainer('Windows'),
-                    tealContainer('Web'),
+                    const SansBold('About me', 35.0),
+                    const Sans(
+                        'Hello! I\'m Vengeang Oeng I specialize in flutter development',
+                        15.0),
+                    const Sans(
+                        "I strive to ensure astounding performance with state of",
+                        15.0),
+                    const Sans(
+                        "the art security for Android, Ios, Web, Mac, Linux",
+                        15.0),
+                    const SizedBox(height: 10),
+                    Wrap(
+                      spacing: 7.0,
+                      runSpacing: 7.0,
+                      children: [
+                        tealContainer('Flutter'),
+                        tealContainer('Firebase'),
+                        tealContainer('Abdroid'),
+                        tealContainer('Windows'),
+                        tealContainer('Web'),
+                      ],
+                    )
                   ],
-                )
+                ),
               ],
             ),
           ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TabWeb extends StatefulWidget {
-  const TabWeb({
+class TabsWeb extends StatefulWidget {
+  const TabsWeb({
     super.key,
     required this.title,
     required this.route,
@@ -11,10 +11,10 @@ class TabWeb extends StatefulWidget {
   final String title;
   final String route;
   @override
-  State<TabWeb> createState() => _TabWebState();
+  State<TabsWeb> createState() => _TabsWebState();
 }
 
-class _TabWebState extends State<TabWeb> {
+class _TabsWebState extends State<TabsWeb> {
   bool _isSelected = false;
   @override
   Widget build(BuildContext context) {

@@ -77,27 +77,27 @@ class _LandingPageWebState extends State<LandingPageWeb> {
         title: const Row(
           children: [
             Spacer(flex: 3),
-            TabWeb(
+            TabsWeb(
               title: "Home",
               route: "/",
             ),
             Spacer(),
-            TabWeb(
+            TabsWeb(
               title: "Works",
               route: "/works",
             ),
             Spacer(),
-            TabWeb(
+            TabsWeb(
               title: "Blog",
               route: "/blog",
             ),
             Spacer(),
-            TabWeb(
+            TabsWeb(
               title: "About",
               route: "/about",
             ),
             Spacer(),
-            TabWeb(
+            TabsWeb(
               title: "Contact",
               route: "/contact",
             ),
@@ -181,7 +181,10 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Image.asset("assets/web.jpg", height: heightDevice / 1.7),
+                Image.asset(
+                  "assets/web.jpg",
+                  height: heightDevice / 1.8,
+                ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
