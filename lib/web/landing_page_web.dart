@@ -297,17 +297,17 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    AnimatedCardWeb(
+                    AnimatedCard(
                       imagePath: 'assets/webL.png',
                       text: 'Web development',
                     ),
-                    AnimatedCardWeb(
+                    AnimatedCard(
                       imagePath: 'assets/app.png',
                       text: 'Application development',
                       fit: BoxFit.contain,
                       reverse: true,
                     ),
-                    AnimatedCardWeb(
+                    AnimatedCard(
                       imagePath: 'assets/firebase.png',
                       text: 'Backend development',
                     ),
