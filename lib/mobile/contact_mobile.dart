@@ -139,7 +139,7 @@ class _ContactMobileState extends State<ContactMobile> {
                   height: 60.0,
                   minWidth: deviceWidth / 2.2,
                   color: Colors.tealAccent,
-                  child: SansBold("Submit", 20.0),
+                  child: const SansBold("Submit", 20.0),
                 )
               ],
             ),

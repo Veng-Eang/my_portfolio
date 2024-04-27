@@ -103,25 +103,26 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
       body: ListView(
         children: [
           // Intro , First section
+          const CircleAvatar(
+            radius: 117.0,
+            backgroundColor: Colors.tealAccent,
+            child: CircleAvatar(
+              radius: 113.0,
+              backgroundColor: Colors.black,
+              child: CircleAvatar(
+                radius: 110.0,
+                backgroundColor: Colors.white,
+                backgroundImage: AssetImage('assets/image-2.png'),
+              ),
+            ),
+          ),
+          const SizedBox(height: 25),
+
           Padding(
-            padding: const EdgeInsets.only(left: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CircleAvatar(
-                  radius: 117.0,
-                  backgroundColor: Colors.tealAccent,
-                  child: CircleAvatar(
-                    radius: 113.0,
-                    backgroundColor: Colors.black,
-                    child: CircleAvatar(
-                      radius: 110.0,
-                      backgroundColor: Colors.white,
-                      backgroundImage: AssetImage('assets/image-2.png'),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 25),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -143,7 +144,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                 ),
                 const SizedBox(height: 15.0),
                 const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Wrap(
                       direction: Axis.vertical,
@@ -172,15 +173,9 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
           const SizedBox(height: 90.0),
           // About me, Second section
           Padding(
-            padding: EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
-              children: [
-                Image.asset(
-                  "assets/web.jpg",
-                  width: 300,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const SansBold('About me', 35.0),
@@ -207,8 +202,6 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                     )
                   ],
                 ),
-              ],
-            ),
           ),
           const SizedBox(height: 60.0),
           Column(
