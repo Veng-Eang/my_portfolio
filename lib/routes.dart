@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:portfolio/mobile/about_mobile.dart';
 import 'package:portfolio/mobile/contact_mobile.dart';
