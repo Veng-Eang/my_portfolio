@@ -35,7 +35,7 @@ class _AboutWebState extends State<AboutWeb> {
         ),
         borderRadius: BorderRadius.circular(5.0),
       ),
-      padding: EdgeInsets.all(7.0),
+      padding: const EdgeInsets.all(7.0),
       child: Text(
         text,
         style: GoogleFonts.openSans(fontSize: 15.0),
@@ -45,7 +45,6 @@ class _AboutWebState extends State<AboutWeb> {
 
   @override
   Widget build(BuildContext context) {
-    var heightDevice = MediaQuery.of(context).size.height;
     var widthDevice = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
