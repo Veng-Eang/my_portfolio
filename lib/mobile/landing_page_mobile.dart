@@ -5,6 +5,8 @@ import 'package:portfolio/components.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LandingPageMobile extends StatefulWidget {
+  const LandingPageMobile({super.key});
+
   @override
   State<LandingPageMobile> createState() {
     return _LandingPageMobileState();

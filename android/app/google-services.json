@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "221403492465",
+    "project_id": "veng-eang",
+    "storage_bucket": "veng-eang.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221403492465:android:4f02f948e5f574d09d2bd0",
+        "android_client_info": {
+          "package_name": "com.vengeang.portfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHjt_KE1QjnsVYGZgcElb0I59ZIYdgFzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

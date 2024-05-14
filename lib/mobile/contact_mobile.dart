@@ -35,7 +35,7 @@ class _ContactMobileState extends State<ContactMobile> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const DrawerHeader(
-              padding: const EdgeInsets.only(bottom: 20.0),
+              padding: EdgeInsets.only(bottom: 20.0),
               child: CircleAvatar(
                 radius: 117.0,
                 backgroundColor: Colors.tealAccent,

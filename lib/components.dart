@@ -199,6 +199,8 @@ class TextForm extends StatelessWidget {
               if (RegExp("\\bvengeang\\b", caseSensitive: false)
                   .hasMatch(text.toString())) {
                 return "Match Found";
+              } else {
+                return null;
               }
             },
             autovalidateMode: AutovalidateMode.onUserInteraction,
