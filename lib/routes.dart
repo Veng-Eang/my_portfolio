@@ -20,7 +20,8 @@ class Routes {
             if (constraints.maxWidth > 800) {
               return const LandingPageWeb();
             } else {
-              return LandingPageMobile();
+              // return LandingPageMobile();
+              return const LandingPageMobile();
             }
           }),
         );
@@ -42,7 +43,7 @@ class Routes {
             if (constrain.maxWidth > 800) {
               return const AboutWeb();
             } else {
-              return AboutMobile();
+              return const AboutMobile();
             }
           }),
         );
